@@ -5,6 +5,7 @@ from recipe import views
 #def-router automatically generates/registers all the URLs for our user : /api/recipe/tags/id
 router = DefaultRouter()
 router.register('tags', views.TagViewSet)
+router.register('ingredients',views.IngredientViewSet)
 #regsiters the viewset with the router
 app_name = 'recipe'
 
