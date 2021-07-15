@@ -19,12 +19,12 @@ class BaseRecipeAttrViewSet(viewsets.GenericViewSet,
         """Create a new object"""
         serializer.save(user=self.request.user)
 
-class TagViewSet(viewsets.GenericViewSet, mixins.ListModelMixin,mixins.CreateModelMixin):
+class TagViewSet(BaseRecipeAttrViewSet):
     """Manage tags in the database"""
     queryset = Tag.objects.all()
     serializer_class = serializers.TagSerializer
 
-class IngredientViewSet(viewsets.GenericViewSet, mixins.ListModelMixin,mixins.CreateModelMixin):
+class IngredientViewSet(BaseRecipeAttrViewSet):
     """Manage ingredients in the database"""
     queryset = Ingredient.objects.all()
     serializer_class = serializers.IngredientSerializer
